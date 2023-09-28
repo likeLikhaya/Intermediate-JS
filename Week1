@@ -1,0 +1,62 @@
+
+
+Popups Window Method
+
+- A popup window is an old way to show additional content to users.
+- To create a popup, use `window.open('URL')`.
+- Popups can be tricky on mobiles due to the absence of multiple windows.
+- Some use cases, like Facebook, still use popups because they have their JavaScript environment.
+- Popups can open URLs and communicate with the opener window.
+
+Window.open Syntax
+
+- `window.open(URL, name, params)` opens a popup.
+- `URL` is the web address to load.
+- `name` specifies the popup's name or reuses an existing one.
+- `params` configures the popup's properties.
+
+Accessing Popups
+
+- `window.open` returns a reference to the new window.
+- You can manipulate its properties and content.
+- Example: `let newWin = window.open("about:blank", "hello", "width=200,height=200")`.
+
+Accessing Windows from Popups
+
+- Popups can access the "opener" window using `window.opener`.
+- Example: `window.opener.document.body.innerHTML = 'Test'`.
+
+Closing Popups
+
+- To close a window: `win.close()`.
+- To check if a window is closed: `win.closed`.
+
+Scrolling and Resizing
+
+- Methods like `win.moveBy(x, y)` and `win.resizeTo(width, height)` can move and resize windows.
+- Avoid disabling scrollbars or resizing for user-friendliness.
+
+Cross-Window Communication
+
+- Windows can communicate if they have the same origin (protocol, domain, port).
+- `postMessage` allows secure communication between windows from different origins.
+- Example: `window.postMessage(data, targetOrigin)`.
+
+Clickjacking Attack
+
+- Clickjacking tricks users into clicking unintended elements.
+- Attackers overlay hidden buttons or links on harmless elements.
+- Protect against clickjacking with security headers like X-Frame-Options.
+
+Typed Arrays and ArrayBuffer
+
+- Typed arrays are like regular arrays but for binary data.
+- They are more efficient and work with binary data.
+- Examples: Uint8Array, Uint16Array, Int32Array.
+
+DataView
+
+- DataView provides flexible access to binary data in an ArrayBuffer.
+- You specify the format when accessing data.
+- Useful for mixed-format data in the same buffer.
+
