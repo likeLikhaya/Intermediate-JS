@@ -1,0 +1,26 @@
+Week 2: 
+Day 2: Form data
+
+-	The "FormData" object, which represents the data in an HTML form.
+
+-	If you provide an HTML form element as an argument, it will automatically capture the form's fields.
+
+-	What's unique about "FormData" is that network methods like "fetch" can use it as a request body. 
+
+-	It's encoded and sent with the "Content-Type: multipart/form-data" header, making it look like a regular form submission to the server.
+
+-	You can manipulate "FormData" fields using methods like "append," "delete," "get," and "has." 
+
+-	You can also use the "set" method, which removes existing fields with the same name and adds a new one.
+
+-	Additionally, you can loop through the fields in "FormData" using a "for..of" loop.
+
+-	When sending a form with a file, the form is always sent as "multipart/form-data," allowing file uploads. <input type="file"> fields are treated similarly to regular form fields.
+
+-	If you want to send dynamically generated binary data (e.g., an image) as part of the form, you can do so using "FormData."
+
+-	The "FormData" object allows you to capture and submit HTML forms conveniently using network methods. 
+
+-	You can create it from an HTML form or build it manually, appending fields with various methods like "append" and "set." 
+
+-	To send a file, you use a 3-argument syntax, including the file name, like an <input type="file"> field. Other useful methods include "delete," "get," and "has."
