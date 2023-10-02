@@ -1,4 +1,5 @@
 
+Day 1 - Frames & Windows
 
 Popups Window Method
 
@@ -36,17 +37,23 @@ Scrolling and Resizing
 - Methods like `win.moveBy(x, y)` and `win.resizeTo(width, height)` can move and resize windows.
 - Avoid disabling scrollbars or resizing for user-friendliness.
 
+Day 2 - Cross-Window Communication
+
 Cross-Window Communication
 
 - Windows can communicate if they have the same origin (protocol, domain, port).
 - `postMessage` allows secure communication between windows from different origins.
 - Example: `window.postMessage(data, targetOrigin)`.
 
+Day 3 - Clickjacking Attack
+
 Clickjacking Attack
 
 - Clickjacking tricks users into clicking unintended elements.
 - Attackers overlay hidden buttons or links on harmless elements.
 - Protect against clickjacking with security headers like X-Frame-Options.
+
+Day 4 - ArrayBuffer and binary arrays
 
 Typed Arrays and ArrayBuffer
 
