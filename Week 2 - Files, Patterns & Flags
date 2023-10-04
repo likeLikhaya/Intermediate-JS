@@ -1,26 +1,136 @@
 Week 2: 
+Day 1: 
+
+FileReader:
+- Essential tool for extracting information from Blob and File objects.
+- Provides methods for various data formats: binary, text, and base64 data URL.
+- Method selection depends on data format and application.
+- Noteworthy events during reading: loadstart, progress, load, abort, error, and loadend.
+- Access result via `reader.result` for success or `reader.error` for errors.
+- Frequently used events: load and error.
+
+AJAX and `fetch()` Method:
+- JavaScript retrieves fresh data without page reload, thanks to AJAX.
+- Tasks include submitting orders, loading user info, and real-time server updates.
+- `fetch()` method is widely used in modern JavaScript.
+- Simple usage with URL and optional parameters (HTTP method, headers).
+- Initiates request, and returns a promise upon making a `fetch()` request.
+- Promise resolves with Response object (HTTP status, headers); no access to response body yet.
+
+Handling Errors:
+- If `fetch()` encounters network issues or HTTP request failure, the promise is rejected.
+- Includes scenarios like non-existent websites or HTTP errors (e.g., 404, 500).
+- Skillful error handling integrated into the normal workflow.
+
+Benefits of `fetch()`:
+- Powerful tool for seamless network requests and data retrieval.
+- Eliminates the need for page reloading.
+- Offers flexibility and efficient client-server data exchange.
+
+
 Day 2: Form data
 
 -	The "FormData" object, which represents the data in an HTML form.
-
 -	If you provide an HTML form element as an argument, it will automatically capture the form's fields.
-
 -	What's unique about "FormData" is that network methods like "fetch" can use it as a request body. 
-
 -	It's encoded and sent with the "Content-Type: multipart/form-data" header, making it look like a regular form submission to the server.
-
 -	You can manipulate "FormData" fields using methods like "append," "delete," "get," and "has." 
-
 -	You can also use the "set" method, which removes existing fields with the same name and adds a new one.
-
 -	Additionally, you can loop through the fields in "FormData" using a "for..of" loop.
-
 -	When sending a form with a file, the form is always sent as "multipart/form-data," allowing file uploads. <input type="file"> fields are treated similarly to regular form fields.
-
 -	If you want to send dynamically generated binary data (e.g., an image) as part of the form, you can do so using "FormData."
-
 -	The "FormData" object allows you to capture and submit HTML forms conveniently using network methods. 
-
 -	You can create it from an HTML form or build it manually, appending fields with various methods like "append" and "set." 
-
 -	To send a file, you use a 3-argument syntax, including the file name, like an <input type="file"> field. Other useful methods include "delete," "get," and "has."
+
+Day 3: Fetch: Cross-Origin Requests
+
+Cross-Origin Requests in JavaScript:
+- Cross-origin requests involve making HTTP requests from one domain to another.
+- Web browsers impose security restrictions to prevent potential vulnerabilities.
+- The Same-Origin Policy generally restricts requests to the same domain, with exceptions.
+- Compliance with the Cross-Origin Resource Sharing (CORS) policy is required for cross-origin requests.
+- CORS allows servers to specify permitted domains and request types.
+- Browser includes Origin header; server uses Access-Control-Allow-Origin header to allow or deny requests.
+- The server can specify a matching domain or use a wildcard (*) for requests from any domain.
+
+Types of CORS Requests:
+- Two types: simple and non-simple requests.
+- Simple requests meet specific criteria (e.g., common HTTP methods like GET, HEAD, POST).
+- Simple requests do not require a preflight CORS check.
+- Non-simple requests involve complex operations, extra headers, or non-GET/POST methods.
+- Non-simple requests may require a preflight request to confirm server approval.
+
+Cross-Origin Requests with Forms:
+- Cross-origin issues can occur when submitting a form to a different domain.
+- The server must include proper CORS headers in the response to allow the request.
+- Without the correct CORS setup, the browser blocks form submission.
+
+Handling User Credentials:
+- JavaScript requests from one website to another typically do not include user credentials (e.g., cookies or HTTP authentication).
+- This is a security measure to prevent unauthorized access to user data.
+- To allow credentials in requests from a different domain, the server must include "Access-Control-Allow-Credentials: true" in its response.
+- To send credentials with a JavaScript request, set the "credentials" option to "include" in the fetch request.
+
+Day 4: Patterns and Flags
+
+Patterns and Regular Expressions:
+- Regular expressions consist of patterns and flags.
+- These patterns are used for searching and replacing characters in strings.
+- Two syntaxes can be used to create regular expressions: long and short (with slashes).
+- The slash indicates that a regular expression is being defined.
+- Flags can be used to modify the behavior of regular expressions.
+
+Using Regular Expressions:
+- Regular expressions are integrated with string methods.
+- Methods like `search` and `match` enable searching and manipulation using regular expressions.
+- Simple searches and global searches (using the 'g' flag) can be performed.
+- The `search` method returns the position of the first match.
+
+Dynamic Regular Expressions:
+- `new RegExp` allows dynamic construction of regular expressions from strings.
+- This is especially useful when patterns need to be generated based on user input.
+
+Regular Expression Flags:
+- Regular expressions can have flags that impact how they search.
+- JavaScript provides six flags, including "i" (case-insensitive) and "g" (global), among others.
+- These flags alter the behavior of regular expressions, e.g., "i" makes searches case-insensitive.
+
+RegExp and String Methods:
+- Methods such as `match`, `matchAll`, `search`, and `replace` offer various ways to search and manipulate strings.
+- `str.match(reg)` without the "g" flag finds the first match.
+- `str.search(reg)` locates the position of the first match.
+- `str.replace(reg, str|func)` replaces matches.
+- `str.split(str|reg)` splits strings using a delimiter.
+
+Character Classes:
+- Character classes represent sets of characters.
+- For instance, `\d` matches any single digit.
+- Utilizing character classes like "\d" can help identify specific character types within strings.
+
+Word Boundaries \b:
+- `\b` signifies a word boundary.
+- It's a zero-width assertion that detects word boundaries in strings.
+- Valuable for matching complete words or ensuring patterns are surrounded by non-word characters.
+
+Inverse Classes:
+- There are complementary classes for each character class.
+- For example, `\D` matches characters that are not digits.
+- `\D` can be employed to remove non-digit characters from strings.
+
+Spaces in Regular Expressions:
+- Spaces are treated as regular characters in regular expressions.
+- To match spaces explicitly, include them in the pattern.
+
+Dot (.) as Any Character:
+- A dot (.) matches any character except a newline.
+- It serves as a placeholder for any single character.
+- To match any character, including newlines, employ the "s" flag.
+
+Escaping Special Characters:
+- Special characters in regular expressions have special meanings.
+- To match them as regular characters, escape them with a backslash "\".
+- This includes brackets, backslashes, slashes, and other special characters.
+- When creating regular expressions using "new RegExp," backslashes may require double escaping.
+
+Day 5 is our presentation sprint
