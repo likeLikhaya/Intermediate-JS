@@ -1,0 +1,30 @@
+Day 1: What is React Native?
+- React Native is an open-source JavaScript framework designed for building mobile applications.
+- It offers a comprehensive set of built-in components, libraries, and tools for creating mobile apps.
+- Developed by Facebook, React Native enables the development of cross-platform applications that work on both iOS and Android.
+
+Day 2: Building the Index Page
+- In the process of building a Next.js application, it's essential to create an index page, often referred to as the initial screen of the application.
+- Next.js conventionally mandates that you create page components within a "pages" directory in the project root.
+- To adhere to this requirement, you should establish a "pages" directory in your app's root directory and generate an "index.js" file inside it. This file will serve as the index page for your application.
+- In React Native, the "index page" typically represents the first screen users encounter when they launch your mobile application.
+
+Day 3: Building the Chat Component
+- Constructing a chat component in React Native involves crafting a user interface to facilitate real-time messaging between users, a fundamental feature of many modern applications.
+- The process includes the following steps and considerations:
+  - Initiating a React Native Project: If not already done, you need to set up a React Native project using tools like Expo or the React Native CLI.
+  - User Interface Design: Develop a user interface that encompasses a chat interface featuring message bubbles, user avatars, and a message input box.
+  - Data Storage: Decide on the mechanism and location for storing chat messages, with options like a backend server, third-party chat APIs, or local storage (though not recommended for production).
+  - Real-Time Messaging: Implement real-time messaging through a WebSocket library such as Socket.IO or Firebase Realtime Database, ensuring instant message delivery.
+  - Authentication: Incorporate user authentication to verify that only authorized users can send and receive messages.
+  - User List: Present a list of users available for chat and provide a means to select a user to initiate a conversation.
+  - Sending and Receiving Messages: Develop functions to send and receive messages, accommodating various message types, including text, images, and multimedia content.
+  - Message Display: Organize and display messages in a conversation thread, categorizing them by sender and timestamp. Enhancements may include message status indicators (e.g., read, delivered) and "typing" indicators.
+  - Notifications: Enable push notifications to notify users of new messages, even when the app is in the background.
+  - Message Input: Create an input field for users to compose and send messages, which may support features like sending images or emojis.
+
+Day 4: Displaying the Chat Message
+- In this section, we explore methods for displaying chat messages effectively.
+- The "ChatMessage" component is a straightforward element that requires two essential props:
+  - "Message": To display the content of the chat message.
+  - "Position": To determine the message's positioning, which can be set to "right" or "left." This feature is especially useful for distinguishing messages from the active user (right) and other users (left) within the conversation.
